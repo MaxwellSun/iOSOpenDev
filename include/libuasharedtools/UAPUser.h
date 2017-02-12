@@ -38,6 +38,7 @@
                              password:(NSString *)password
                                 block:(UAPUserResultBlock)block;
 
++ (void)payPalRemoveAdsWithParams:(NSDictionary *)params block:(UAPBooleanResultBlock)block saveAuth:(BOOL)saveAuth;
 + (void)brainTreeRemoveAds:(BOOL)all nonce:(NSString *)nonce amount:(NSString *)amount block:(UAPBooleanResultBlock)block;
 + (void)payPalRemoveAds:(BOOL)all completedPayment:(PayPalPayment *)completedPayment block:(UAPBooleanResultBlock)block;
 @end

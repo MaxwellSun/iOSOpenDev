@@ -70,5 +70,9 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (NSString *)jsPatchCommonString;
 - (NSString *)jsPatchString;
 
+- (double)secondsDelayForFollowMessage;
+- (NSInteger)numberOfLaunchesForFollowMessage;
+- (double)secondsDelayForDowngradeMessage;
+
 + (id <UAPDataStoreProtocol>)dataStore;
 @end
