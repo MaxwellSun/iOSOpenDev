@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <FXForms.h>
 
+#define SCPDefaultsPrefix   @"UATOOLS_SETTING_"
+#define kUAPackagesKey          @"UA_PACKAGES_KEY"
+
 @interface UAPPMoreSettings : NSObject <FXForm>
 @property (nonatomic, assign) BOOL should_show_ua_updates;
+@property (nonatomic, strong) NSArray *packages;
 - (instancetype)initWithTweakName:(NSString *)tweakName;
 @end
