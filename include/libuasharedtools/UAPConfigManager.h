@@ -28,7 +28,7 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 
 @interface UAPConfig : UAJSONModel
 @property (nonatomic, strong) NSDictionary *params;
-+ (void)getConfigInBackgroundWithBlock:(UAPConfigResultBlock)block;
++ (void)getConfigInBackgroundWithBlock:(UAPConfigResultBlock)block force:(BOOL)force;
 /**
  Returns the object associated with a given key.
  
@@ -59,7 +59,8 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 
 + (instancetype)sharedManager;
 - (void)fetchConfigIfNeeded;
-- (void)forceFetchConfig;
+- (void)fetchConfigIfNeeded:(BOOL)forceBackground;
+- (void)forceFetchConfig:(BOOL)fetchInBackground;;
 
 - (BOOL)mainViewAdsEnabled;
 - (BOOL)fsAdsEnabled;
