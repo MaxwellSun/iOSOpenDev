@@ -78,5 +78,7 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (NSInteger)numberOfLaunchesForFollowMessage;
 - (double)secondsDelayForDowngradeMessage;
 
+- (double)timeIntervalBetweenAdShow;
+
 + (id <UAPDataStoreProtocol>)dataStore;
 @end
