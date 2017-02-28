@@ -60,6 +60,8 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 + (instancetype)sharedManager;
 - (void)fetchConfigIfNeeded;
 - (void)fetchConfigIfNeeded:(BOOL)forceBackground;
+
+- (void)forceFetchConfig;
 - (void)forceFetchConfig:(BOOL)fetchInBackground;;
 
 - (BOOL)mainViewAdsEnabled;
