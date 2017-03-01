@@ -57,4 +57,6 @@
  */
 - (void)clear;
 
+- (instancetype)initWithURL:(NSURL *)URL;
+
 @end

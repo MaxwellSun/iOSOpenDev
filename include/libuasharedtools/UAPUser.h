@@ -9,6 +9,8 @@
 #import "UAJSONModel.h"
 #import "UAPConstants.h"
 
+#define kUserTokenKey           @"UAPUSERTOKENKEY"
+
 @class PayPalPayment;
 
 @interface UAPUserManager : NSObject
