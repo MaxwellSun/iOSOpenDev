@@ -13,4 +13,5 @@
 +(BOOL)shouldLoadHooks;
 +(void)resetNumberOfCrashes;
 +(void)addExceptionHandlers;
++(void)removeExceptionHandlers;
 @end
