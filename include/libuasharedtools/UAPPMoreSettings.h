@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <FXForms.h>
 
-#define SCPDefaultsPrefix   @"UATOOLS_SETTING_"
+#define UATOOLSDefaultsPrefix   @"UATOOLS_SETTING_"
 #define kUAPackagesKey          @"UA_PACKAGES_KEY"
 
 @interface UAPPMoreSettings : NSObject <FXForm>
