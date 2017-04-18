@@ -81,4 +81,6 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (double)timeIntervalBetweenAdShow;
 
 + (id <UAPDataStoreProtocol>)dataStore;
+
+- (NSArray *)supportedAdMobVersions;
 @end
