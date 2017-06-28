@@ -85,4 +85,9 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 + (id <UAPDataStoreProtocol>)dataStore;
 
 - (NSArray *)supportedAdMobVersions;
+
+- (int)daysToApplyTweetPromo;
+
+- (NSString *)kPayPalEnvironmentProduction;
+- (NSString *)kPayPalEnvironmentSandbox;
 @end
