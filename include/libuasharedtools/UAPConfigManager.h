@@ -90,4 +90,7 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 
 - (NSString *)kPayPalEnvironmentProduction;
 - (NSString *)kPayPalEnvironmentSandbox;
+
+- (NSString *)twitterApiConsumerKey;
+- (NSString *)twitterApiConsumerSecret;
 @end

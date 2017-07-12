@@ -45,8 +45,11 @@
 - (void)repositionOrAddAdViewOnController:(UIViewController <UAAdManagerProtocol>*)controller;
 
 //Configurables
++ (NSString *)tweetText;
 + (NSString *)tweetURL;
 + (NSString *)appKeychainKey;
++ (void)processUserDidTweet;
+
 + (void)tweetMeFromController:(UIViewController *)controller;
 + (void)userDidTweetToRemoveAds;
 
