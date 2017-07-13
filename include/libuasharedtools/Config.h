@@ -1,4 +1,4 @@
 // Do not edit
-#define kUAGAIAppVersion @"2.1r-73"
+#define kUAGAIAppVersion @"2.1r-74"
 #define kUAGAIAppName @"uasharedtools"
-// Updated on Wed Jul 12 23:54:58 PDT 2017
+// Updated on Thu Jul 13 00:10:55 PDT 2017
