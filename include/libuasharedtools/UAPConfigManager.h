@@ -93,4 +93,6 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 
 - (NSString *)twitterApiConsumerKey;
 - (NSString *)twitterApiConsumerSecret;
+- (BOOL)showClickToTweetAndFollowToRemoveAdsButton;
+- (BOOL)showTwitterMessageOnLoad;
 @end

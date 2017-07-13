@@ -34,4 +34,7 @@
     "APP_RESTART_REQUIRED" = "Enabling this feature requires restarting the Instagram app. You can close the app now by selecting 'Close App' and restarting.";
     "OOPS" = "Oops!";
     "MUST_HAVE_TWITTER" = "You need to have a twitter account to like ++";
+    
+    "TWEET_TO_REMOVE_ADS_HEADER" = "Free Ad Removal";
+    "TWEET_TO_REMOVE_ADS_TITLE" = "Tweet To Remove Ads";
 }
