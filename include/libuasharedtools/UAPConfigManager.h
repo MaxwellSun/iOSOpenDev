@@ -67,6 +67,7 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (BOOL)mainViewAdsEnabled;
 - (BOOL)fsAdsEnabled;
 - (BOOL)showInterstitialOnLaunch;
+- (NSInteger)numberOfLaunchesForInterstitial;
 
 - (double)adRefreshTimeout;
 - (BOOL)forceLoadBannerAds;
