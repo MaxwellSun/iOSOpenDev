@@ -74,6 +74,7 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (BOOL)blockAdLoadInTheBG;
 - (BOOL)staticOrientationAds;
 - (BOOL)showLocalBannerAds;
+- (BOOL)blockTuTuAdsOnPremiumUsers;
 
 - (NSString *)jsPatchCommonString;
 - (NSString *)jsPatchString;

@@ -52,5 +52,6 @@
 
 + (void)tweetMeFromController:(UIViewController *)controller;
 + (void)userDidTweetToRemoveAds;
++ (BOOL)currentUserIsPremium;
 
 @end
