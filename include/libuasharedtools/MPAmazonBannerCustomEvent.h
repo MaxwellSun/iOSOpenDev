@@ -6,11 +6,7 @@
 //
 
 #import "MPBannerCustomEvent.h"
-#import <AmazonAd/AmazonAdView.h>
 
-/*
- */
-
-@interface MPAmazonBannerCustomEvent : MPBannerCustomEvent <AmazonAdViewDelegate>
+@interface MPAmazonBannerCustomEvent : MPBannerCustomEvent
 
 @end

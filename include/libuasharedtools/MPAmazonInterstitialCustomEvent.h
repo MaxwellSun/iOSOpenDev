@@ -6,11 +6,7 @@
 //
 
 #import "MPInterstitialCustomEvent.h"
-#import <AmazonAd/AmazonAdInterstitial.h>
 
-/*
- */
-
-@interface MPAmazonInterstitialCustomEvent : MPInterstitialCustomEvent <AmazonAdInterstitialDelegate>
+@interface MPAmazonInterstitialCustomEvent : MPInterstitialCustomEvent
 
 @end
