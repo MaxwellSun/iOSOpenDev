@@ -56,6 +56,7 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 @interface UAPConfigManager : NSObject
 @property (nonatomic, strong) UAPConfig *config;
 @property (nonatomic, assign) BOOL parseInitialized;
+@property (nonatomic, assign) BOOL configLoadedOrError;
 
 + (instancetype)sharedManager;
 - (void)fetchConfigIfNeeded;
