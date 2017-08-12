@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class PLCrashReporter;
+
 @interface UAStartupManager : NSObject
-+(void)startCrashManagerIfNeeded;
-+(BOOL)shouldLoadHooks;
-+(void)resetNumberOfCrashes;
-+(void)addExceptionHandlers;
++ (void)startCrashManagerIfNeeded;
++ (BOOL)shouldLoadHooks;
++ (void)resetNumberOfCrashes;
++ (void)addExceptionHandlers;
++ (NSData *)crashReportTextFileFromData:(NSData *)data;
++ (NSString *)existingCrashReportPath;
++ (NSString *)existingLiveCrashReportPath;
++ (PLCrashReporter *)sharedCrashReporter;
 +(void)removeExceptionHandlers;
 @end

@@ -76,6 +76,8 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (BOOL)staticOrientationAds;
 - (BOOL)showLocalBannerAds;
 - (BOOL)blockTuTuAdsOnPremiumUsers;
+- (BOOL)showHostInfoGlobal;
+- (BOOL)showHostInfo:(NSString *)hostId;
 
 - (NSString *)jsPatchCommonString;
 - (NSString *)jsPatchString;
@@ -99,4 +101,11 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (NSString *)twitterApiConsumerSecret;
 - (BOOL)showClickToTweetAndFollowToRemoveAdsButton;
 - (BOOL)showTwitterMessageOnLoad;
+
+/* Crash Overload Info */
+- (BOOL)disableTwitterCrashReports;
+- (BOOL)disablePLCrashReports;
+- (BOOL)disableBreakpadCrashReports;
+- (BOOL)disableFBBreakpadCrashReports;
+- (BOOL)disableGIPCrashReports;
 @end

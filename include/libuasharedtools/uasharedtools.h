@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface UASharedTools : NSObject
++(void)applicationDidFinishLaunchingPreOrig;
 +(void)applicationDidFinishLaunching;
 +(void)applicationDidFinishLaunchingFirstLeg;
 +(void)applicationDidFinishLaunchingLastLeg;

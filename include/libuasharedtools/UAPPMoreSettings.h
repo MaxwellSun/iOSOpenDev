@@ -16,4 +16,7 @@
 @property (nonatomic, assign) BOOL should_show_ua_updates;
 @property (nonatomic, strong) NSArray *packages;
 - (instancetype)initWithTweakName:(NSString *)tweakName;
+
++ (void)presentSupportEmailController;
++ (void)presentSupportEmailController:(NSString *)tweakName andAttachments:(NSArray *)attachments;
 @end
