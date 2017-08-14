@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *packages;
 - (instancetype)initWithTweakName:(NSString *)tweakName;
 
++ (NSArray *)crashReportAttachments;
 + (void)presentSupportEmailController;
 + (void)presentSupportEmailController:(NSString *)tweakName andAttachments:(NSArray *)attachments;
 @end
