@@ -25,6 +25,7 @@
 +(BOOL)useFlurry;
 +(NSString *)flurryKey;
 +(BOOL)sideloadedPPTweak;
++(BOOL)installCustomCrashHandler;
 
 @end
 

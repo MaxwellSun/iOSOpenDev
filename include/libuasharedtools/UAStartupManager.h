@@ -19,5 +19,7 @@
 + (NSString *)existingCrashReportPath;
 + (NSString *)existingLiveCrashReportPath;
 + (PLCrashReporter *)sharedCrashReporter;
-+(void)removeExceptionHandlers;
++ (void)removeExceptionHandlers;
++ (void)startJBEngineIfNeeded;
++ (void)addAppropriateHooks;
 @end
