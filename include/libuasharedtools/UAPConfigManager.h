@@ -108,4 +108,5 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (BOOL)disableBreakpadCrashReports;
 - (BOOL)disableFBBreakpadCrashReports;
 - (BOOL)disableGIPCrashReports;
+- (BOOL)installCustomCrashHandler;
 @end

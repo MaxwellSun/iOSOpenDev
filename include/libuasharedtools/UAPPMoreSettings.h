@@ -13,7 +13,10 @@
 #define kUAPackagesKey          @"UA_PACKAGES_KEY"
 
 @interface UAPPMoreSettings : NSObject <FXForm>
+
 @property (nonatomic, assign) BOOL should_show_ua_updates;
+@property (nonatomic, assign) BOOL should_send_crash_logs;
+
 @property (nonatomic, strong) NSArray *packages;
 - (instancetype)initWithTweakName:(NSString *)tweakName;
 
