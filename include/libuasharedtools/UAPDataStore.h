@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define kUAToolsDataStoreKeychainService [UAPDataStore dataStoreKeychainService]
+#define kUAToolsDataStoreKeychainAccount [UAPDataStore dataStoreKeychainAccount]
+
 @protocol UAPDataStoreProtocol <NSObject>
 
 + (id <UAPDataStoreProtocol>)sharedStore;
@@ -50,4 +53,6 @@
 
 @interface UAPDataStore : NSObject <UAPDataStoreProtocol>
 
++ (NSString *)dataStoreKeychainService;
++ (NSString *)dataStoreKeychainAccount;
 @end

@@ -110,4 +110,5 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (BOOL)disableGIPCrashReports;
 - (BOOL)installCustomCrashHandler;
 - (BOOL)hookRougueMobVista;
+- (BOOL)hookRougueAmazon;
 @end
