@@ -7,7 +7,7 @@
 	<key>APPEARANCE_OPTIONS</key>
 	<string>Appearance Options</string>
 	<key>APP_RESTART_REQUIRED</key>
-	<string>Enabling this feature requires restarting the Instagram app. You can close the app now by selecting &#39;Close App&#39; and restarting.</string>
+	<string>Enabling this feature requires restarting the Instagram app. You can close the app now by selecting &apos;Close App&apos; and restarting.</string>
 	<key>CANCEL</key>
 	<string>Cancel</string>
 	<key>CHANGE_PP_PASSWORD</key>
@@ -81,7 +81,7 @@
 	<key>TOOLS_SHOW_UPDATES</key>
 	<string>Show Tweak Updates</string>
 	<key>TOOLS_SHOW_UPDATES_FOOTER</key>
-	<string>Show tweak updates on the beta or BigBoss repo.</string>
+	<string>Show tweak updates.</string>
 	<key>TWEET_TO_REMOVE_ADS</key>
 	<string>Tweeting will remove IG ++ ads for 1.5 weeks. You can tweet for FREE every week. Your support is awesome!</string>
 	<key>TWEET_TO_REMOVE_ADS_HEADER</key>

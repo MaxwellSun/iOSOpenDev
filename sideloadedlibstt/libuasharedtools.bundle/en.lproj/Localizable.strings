@@ -81,7 +81,7 @@
 	<key>TOOLS_SHOW_UPDATES</key>
 	<string>Show Tweak Updates</string>
 	<key>TOOLS_SHOW_UPDATES_FOOTER</key>
-	<string>Show tweak updates on the beta or BigBoss repo.</string>
+	<string>Show tweak updates.</string>
 	<key>TWEET_TO_REMOVE_ADS</key>
 	<string>Tweeting will remove IG ++ ads for 1.5 weeks. You can tweet for FREE every week. Your support is awesome!</string>
 	<key>TWEET_TO_REMOVE_ADS_HEADER</key>

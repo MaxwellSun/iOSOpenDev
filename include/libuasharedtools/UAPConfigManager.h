@@ -111,4 +111,6 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (BOOL)installCustomCrashHandler;
 - (BOOL)hookRougueMobVista;
 - (BOOL)hookRougueAmazon;
+
+- (NSString *)configVersion;
 @end
