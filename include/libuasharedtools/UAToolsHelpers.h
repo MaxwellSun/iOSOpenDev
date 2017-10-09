@@ -33,6 +33,7 @@ BOOL ua_beta_repo_installed (void);
 
 #pragma mark -- keychain access
 + (NSString *)uaToolsAppAccessGroup;
++ (NSURL *)sharedAppURLWithOriginalResult:(NSURL *)r identifier:(NSString *)identifier ;
 
 #pragma mark -- Fabric Helpers
 + (NSString *)bundleIdentifierForAnswers:(NSString *)originalBundleIdentifier;
