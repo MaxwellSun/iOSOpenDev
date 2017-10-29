@@ -25,7 +25,7 @@ BOOL ua_beta_repo_installed (void);
 + (NSDictionary *)updateGADParamsFromDict:(NSDictionary *)dict;
 + (NSDictionary *)updateRevMobParamsFromDict:(NSDictionary *)dict;
 + (NSString *)properBundleFromBundle:(NSString *)bundle;
-+(NSString *)properBundleFromBundle:(NSString *)bundle overwrite:(BOOL)overwrite;
++ (NSString *)properBundleFromBundle:(NSString *)bundle overwrite:(BOOL)overwrite;
 + (NSString *)properNameFromName:(NSString *)name;
 + (NSString *)localizedStringForKey:(NSString *)string;
 + (NSDictionary *)amaParamsFromDict:(NSDictionary *)dict;
@@ -46,6 +46,9 @@ BOOL ua_beta_repo_installed (void);
 + (BOOL)loadClassesNamed:(NSArray *)classNames;
 
 + (BOOL)allHooksFunctional;
+
+#pragma mark -- Info Dictionary
++ (NSMutableDictionary *)enhancedInfoDictionary:(NSDictionary *)originalDictionary;
 @end
 
 #pragma mark -- Catagories
@@ -65,6 +68,10 @@ BOOL ua_beta_repo_installed (void);
 
 @interface UAToolsKeychainHooks : NSObject
 + (void)addKeychainHooksIfNeeded;
+@end
+
+@interface UAToolsKeychainHooks (SSKeyChain)
++ (void)addSSKeychainHooks;
 @end
 
 #endif

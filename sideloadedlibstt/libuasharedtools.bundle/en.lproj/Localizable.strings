@@ -90,5 +90,15 @@
 	<string>Tweet To Remove Ads</string>
 	<key>USE_TOUCH_ID</key>
 	<string>Use Touch ID</string>
+	<key>RESET_DEFAULTS_HEADERS</key>
+	<string>Reset Settings and Keychain</string>
+	<key>RESET_USER_DEFAULTS</key>
+	<string>Reset User Defaults</string>
+	<key>RESET_USER_DEFAULTS_FOOTER</key>
+	<string>Clear all the user defaults for the current app.</string>
+	<key>RESET_USER_KEYCHAIN</key>
+	<string>Reset App Keychain</string>
+	<key>RESET_USER_KEYCHAIN_FOOTER</key>
+	<string>Clear the keychain for the current app.</string>
 </dict>
 </plist>

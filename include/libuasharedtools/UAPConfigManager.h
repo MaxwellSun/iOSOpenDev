@@ -112,6 +112,11 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (BOOL)hookRougueMobVista;
 - (BOOL)hookRougueAmazon;
 
+- (NSUInteger)crashSignalHandlerType;
+- (NSUInteger)crashSymbolicationType;
+- (BOOL)hookExceptionSymbols;
+- (BOOL)hookExceptionSignalHandlers;
+
 - (BOOL)hookSharedAppURL;
 - (NSString *)configVersion;
 @end

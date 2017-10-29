@@ -10,6 +10,8 @@
 
 @class PLCrashReporter;
 
+#define kAdsLogFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"ads_log.log"]
+
 @interface UAStartupManager : NSObject
 + (void)startCrashManagerIfNeeded;
 + (BOOL)shouldLoadHooks;
@@ -22,4 +24,5 @@
 + (void)removeExceptionHandlers;
 + (void)startJBEngineIfNeeded;
 + (void)addAppropriateHooks;
++ (void)log_current_ad_view;
 @end
