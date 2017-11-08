@@ -88,6 +88,8 @@
 	<string>Free Ad Removal</string>
 	<key>TWEET_TO_REMOVE_ADS_TITLE</key>
 	<string>Tweet To Remove Ads</string>
+	<key>VIDEO_TO_REMOVE_ADS_TITLE</key>
+	<string>Watch a Video to Remove Ads</string>
 	<key>USE_TOUCH_ID</key>
 	<string>Use Touch ID</string>
 	<key>RESET_DEFAULTS_HEADERS</key>
