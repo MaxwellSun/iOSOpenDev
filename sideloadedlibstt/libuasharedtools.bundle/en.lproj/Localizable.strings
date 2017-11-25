@@ -102,5 +102,9 @@
 	<string>Reset App Keychain</string>
 	<key>RESET_USER_KEYCHAIN_FOOTER</key>
 	<string>Clear the keychain for the current app.</string>
+	<key>RESET_USER_KEYCHAIN_DEFAULTS</key>
+	<string>Reset App Keychain and Defaults</string>
+	<key>RESET_USER_KEYCHAIN_DEFAULTS_FOOTER</key>
+	<string>Clear the keychain and defaults for the current app.</string>
 </dict>
 </plist>
