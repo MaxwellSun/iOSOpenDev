@@ -119,4 +119,6 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 
 - (BOOL)hookSharedAppURL;
 - (NSString *)configVersion;
+
+- (NSInteger)consecutiveCrashesBeforeWePreventJSPatch;
 @end
