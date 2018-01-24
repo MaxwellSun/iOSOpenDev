@@ -101,6 +101,7 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (NSString *)twitterApiConsumerSecret;
 - (BOOL)showClickToTweetAndFollowToRemoveAdsButton;
 - (BOOL)showTwitterMessageOnLoad;
+- (NSInteger)numberOfAdCloseForRemoveMessage;
 
 /* Crash Overload Info */
 - (BOOL)disableTwitterCrashReports;
@@ -115,7 +116,7 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (NSUInteger)crashSignalHandlerType;
 - (NSUInteger)crashSymbolicationType;
 - (BOOL)hookExceptionSymbols;
-- (BOOL)hookExceptionSignalHandlers;
+- (BOOL)hookUpdatedExceptionSignalHandlers;
 
 - (BOOL)hookSharedAppURL;
 - (NSString *)configVersion;
