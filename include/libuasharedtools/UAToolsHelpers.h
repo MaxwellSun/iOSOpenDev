@@ -45,8 +45,6 @@ BOOL ua_beta_repo_installed (void);
 + (BOOL)loadClassNamed:(NSString *)className;
 + (BOOL)loadClassesNamed:(NSArray *)classNames;
 
-+ (BOOL)allHooksFunctional;
-
 #pragma mark -- Info Dictionary
 + (NSMutableDictionary *)enhancedInfoDictionary:(NSDictionary *)originalDictionary;
 @end

@@ -122,4 +122,10 @@ typedef void(^UAPConfigResultBlock)(UAPConfig *config, NSError *error);
 - (NSString *)configVersion;
 
 - (NSInteger)consecutiveCrashesBeforeWePreventJSPatch;
+
+/* Sign Up Message */
+- (BOOL)enableSignUpPrompt;
+- (double)secondsDelayForSignUpMessage;
+- (NSInteger)numberOfRequiredLaunchesForInitialSignUpNotice;
+- (NSInteger)numberOfRequiredLaunchesForAdditionalSignUpNotices;
 @end

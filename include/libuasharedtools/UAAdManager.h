@@ -11,6 +11,11 @@
 #import "UAPConfigManager.h"
 #import <MPAdView.h>
 
+@protocol UAAdServiceProvider <NSObject>
+@required
++ (Class)adNetworkClass;
+@end
+
 @protocol UAAdManagerProtocol <NSObject>
 @required
 - (BOOL)shouldHookViewController;
