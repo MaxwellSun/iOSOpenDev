@@ -15,3 +15,23 @@
 +(void)applicationDidFinishLaunchingLastLeg;
 +(void)initializeUAClassesAndMethods;
 @end
+
+//#ifdef SLB
+//
+//#ifndef ___UATOOLS_SL_CHECKS__
+//#define ___UATOOLS_SL_CHECKS__
+//
+//#if __cplusplus
+//extern "C" {
+//#endif
+//
+//    void uatools_sideloaded_check(void);
+//
+//#if __cplusplus
+//}
+//#endif
+//
+//#endif
+//
+//#endif
+
