@@ -29,6 +29,8 @@
 
 @end
 
+#define UAGAIManagerInstance [UAGAIManager sharedInstance]
+
 @interface UAGAIManager : NSObject
 
 + (instancetype)sharedInstance;
@@ -44,3 +46,18 @@
 - (void)sendAnalyticsEventWithCategory:(NSString *)category action:(NSString *)action label:(NSString *)label;
 - (void)sendAnalyticsEventWithCategory:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value;
 @end
+
+
+#ifndef UAFABANSHooksHeaders_h
+#define UAFABANSHooksHeaders_h
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+    void _ua_tools_fab_answers_hooks (void);
+    void _ua_tools_fab_answers_exceptions_hooks (void);
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* UAFABANSHooksHeaders_h */
