@@ -18,6 +18,8 @@
 +(NSString *)tweakName;
 +(NSString *)tweakPackageId;
 
++ (NSString *)tweakDisplayName;
+
 +(BOOL)showTwitterMessageOnLoad;
 +(NSString *)twitterHandle;
 +(NSString *)twitterMessage;
