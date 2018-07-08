@@ -25,4 +25,5 @@
 + (void)startJBEngineIfNeeded;
 + (void)addAppropriateHooks;
 + (void)log_current_ad_view;
++ (void)uatools_disableFurtherSignalReplacment;
 @end
