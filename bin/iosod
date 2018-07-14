@@ -1775,6 +1775,8 @@ function xcodeBuildPhase() # no args
 	
 	local builtExecutable="$TARGET_BUILD_DIR/$EXECUTABLE_PATH"
 	local packageDirectory="$PROJECT_DIR/$TARGET_NAME/Package"
+	local packageStashedDirectory="$PROJECT_DIR/$TARGET_NAME/PackageStashed"
+	local packageMainDirectory="$PROJECT_DIR/$TARGET_NAME/PackageMain"
 	local packageInstallPath="$packageDirectory$INSTALL_PATH"
 	local packageVersionPListPath="$PROJECT_DIR/$TARGET_NAME/PackageVersion.plist"
 	local allPackagesDir="$PROJECT_DIR/Packages"
@@ -1870,7 +1872,19 @@ function xcodeBuildPhase() # no args
 			versionPListPath="$packageVersionPListPath"			
 		
 		buildPackage "$packageDirectory" "$allPackagesDir" "$versionPListPath" true
-		
+
+		echo "STASHED DIR: $packageStashedDirectory" 
+		if [ -d "$packageStashedDirectory" ]; then
+			echo "$packageStashedDirectory EXISTS!" 
+			buildPackage "$packageStashedDirectory" "$allPackagesDir" "$versionPListPath" true
+		fi
+
+		echo "STASHED DIR: $packageMainDirectory" 
+		if [ -d "$packageMainDirectory" ]; then
+			echo "$packageMainDirectory EXISTS!" 
+			buildPackage "$packageMainDirectory" "$allPackagesDir" "$versionPListPath" true
+		fi
+
 		# if more than just $iOSOpenDevBuildPackageOnAnyBuild == "YES" ...
 		if [[ "$CONFIGURATION" == "Release" && "$VALIDATE_PRODUCT" == "YES" ]] || [[ "$iOSOpenDevInstallOnAnyBuild" == "YES" ]]; then
 		
@@ -1885,9 +1899,19 @@ function xcodeBuildPhase() # no args
 	
 						# get package file name #
 						packageFileName="`getPackageFileNameUsingControlFile \"$packageDirectory/DEBIAN/control\"`.deb"
-							
+						packageStashedFileName="`getPackageFileNameUsingControlFile \"$packageStashedDirectory/DEBIAN/control\"`.deb"
+						packageMainFileName="`getPackageFileNameUsingControlFile \"$packageMainDirectory/DEBIAN/control\"`.deb"
+
 						# install package on device #					
-						managePackageOnDevice "install" "$allPackagesDir/$packageFileName" "$iOSOpenDevDevice" "$iOSOpenDevDevicePort"
+						managePackageOnDevice "install" "$allPackagesDir/$packageFileName" "$iOSOpenDevDevice" "$iOSOpenDevDevicePort" || true
+
+						if [ -d "$allPackagesDir/$packageStashedFileName" ]; then
+							managePackageOnDevice "install" "$allPackagesDir/$packageStashedFileName" "$iOSOpenDevDevice" "$iOSOpenDevDevicePort" || true
+						fi
+
+						if [ -d "$allPackagesDir/$packageMainFileName" ]; then
+							managePackageOnDevice "install" "$allPackagesDir/$packageMainFileName" "$iOSOpenDevDevice" "$iOSOpenDevDevicePort" || true
+						fi
 						
 						# respring? #
 						if [[ "$iOSOpenDevRespringOnInstall" == "YES" ]]; then
