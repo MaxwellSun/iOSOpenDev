@@ -1905,12 +1905,12 @@ function xcodeBuildPhase() # no args
 						# install package on device #					
 						managePackageOnDevice "install" "$allPackagesDir/$packageFileName" "$iOSOpenDevDevice" "$iOSOpenDevDevicePort" || true
 
-						if [ -e "$packageStashedDirectory/DEBIAN/control" ]; then
-							packageStashedFileName="`getPackageFileNameUsingControlFile \"$packageStashedDirectory/DEBIAN/control\"`.deb"
-							if [ -e "$allPackagesDir/$packageStashedFileName" ]; then
-								managePackageOnDevice "install" "$allPackagesDir/$packageStashedFileName" "$iOSOpenDevDevice" "$iOSOpenDevDevicePort" || true
-							fi
-						fi
+						# if [ -e "$packageStashedDirectory/DEBIAN/control" ]; then
+						# 	packageStashedFileName="`getPackageFileNameUsingControlFile \"$packageStashedDirectory/DEBIAN/control\"`.deb"
+						# 	if [ -e "$allPackagesDir/$packageStashedFileName" ]; then
+						# 		managePackageOnDevice "install" "$allPackagesDir/$packageStashedFileName" "$iOSOpenDevDevice" "$iOSOpenDevDevicePort" || true
+						# 	fi
+						# fi
 
 						if [ -e "$packageMainDirectory/DEBIAN/control" ]; then
 							packageMainFileName="`getPackageFileNameUsingControlFile \"$packageMainDirectory/DEBIAN/control\"`.deb"
