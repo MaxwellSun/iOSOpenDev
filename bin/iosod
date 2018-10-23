@@ -1919,9 +1919,6 @@ function xcodeBuildPhase() # no args
 							fi
 						fi
 
-
-
-
 						
 						# respring? #
 						if [[ "$iOSOpenDevRespringOnInstall" == "YES" ]]; then
