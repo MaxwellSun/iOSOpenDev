@@ -656,49 +656,54 @@ function buildPackage() # args: packageDir, outputDir, versionPList [, useZOptio
 	local packageFileName
 	local packageName
 	local zipFileName
-	
-	echo "Preparing to build package..."
-	
-	# verify arguments #
-	
-	requireDir "$packageDir"
 
-	requireDir "$outputDir" true
-
-	[[ "$versionPList" == "" ]] || \
-		requireFile "$versionPList" false
-
-	# cleanup #
-
-	[[ ! -f "$subFileControlTxtToRemove" ]] || \
-		rm -f "$subFileControlTxtToRemove" || \
-			panic $? "Failed to remove file $subFileControlTxtToRemove"
-	
-	for f in "${subFilesToRemove[@]}"; do
-		find "$packageDir" -type f -name "$f" -exec rm -f '{}' \; || \
-			panic $? "Failed to remove file $f"
-	done
-
-	xattr -crs "$packageDir" || true # forget abou' it (does not work on 10.6)
-
-	changeMode 0644 "$packageDir/DEBIAN/control"
-	changeMode 0755 "$packageDir/DEBIAN/preinst"
-	changeMode 0755 "$packageDir/DEBIAN/postinst"
-	changeMode 0755 "$packageDir/DEBIAN/prerm"
-	changeMode 0755 "$packageDir/DEBIAN/postrm"
-	
-	# set control file version field #
-	
-	[[ "$versionPList" == "" ]] || \
-		setControlFileVersionFieldUsingVersionPList "$packageDir/DEBIAN/control" "$versionPList"
-
-	# determine package name #
-
-	packageName=`getPackageFileNameUsingControlFile "$packageDir/DEBIAN/control"`
+	echo "CONFIGURATION: ${CONFIGURATION}"
+	if [[ $CONFIGURATION == "DebugSLB" || $CONFIGURATION == "ReleaseSLB" || $CONFIGURATION == "DebugTuTu" || $CONFIGURATION == "ReleaseTutu" ]]; then
+		echo "SKIPPING PKG BUILD B/C WE ARE IN SLB MODE"
+	else
+		echo "Preparing to build package..."
 		
-	# create package #
+		# verify arguments #
+		
+		requireDir "$packageDir"
 
-	createDebianPackage "$packageDir" "$packageName" "$outputDir"
+		requireDir "$outputDir" true
+
+		[[ "$versionPList" == "" ]] || \
+			requireFile "$versionPList" false
+
+		# cleanup #
+
+		[[ ! -f "$subFileControlTxtToRemove" ]] || \
+			rm -f "$subFileControlTxtToRemove" || \
+				panic $? "Failed to remove file $subFileControlTxtToRemove"
+		
+		for f in "${subFilesToRemove[@]}"; do
+			find "$packageDir" -type f -name "$f" -exec rm -f '{}' \; || \
+				panic $? "Failed to remove file $f"
+		done
+
+		xattr -crs "$packageDir" || true # forget abou' it (does not work on 10.6)
+
+		changeMode 0644 "$packageDir/DEBIAN/control"
+		changeMode 0755 "$packageDir/DEBIAN/preinst"
+		changeMode 0755 "$packageDir/DEBIAN/postinst"
+		changeMode 0755 "$packageDir/DEBIAN/prerm"
+		changeMode 0755 "$packageDir/DEBIAN/postrm"
+		
+		# set control file version field #
+		
+		[[ "$versionPList" == "" ]] || \
+			setControlFileVersionFieldUsingVersionPList "$packageDir/DEBIAN/control" "$versionPList"
+
+		# determine package name #
+
+		packageName=`getPackageFileNameUsingControlFile "$packageDir/DEBIAN/control"`
+			
+		# create package #
+
+		createDebianPackage "$packageDir" "$packageName" "$outputDir"
+	fi
 }
 
 function createDebianPackage() # args: sourceDir, packageName [, outputDir]
