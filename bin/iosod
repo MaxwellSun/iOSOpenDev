@@ -657,9 +657,10 @@ function buildPackage() # args: packageDir, outputDir, versionPList [, useZOptio
 	local packageName
 	local zipFileName
 
-	echo "CONFIGURATION: ${CONFIGURATION}"
-	if [[ $CONFIGURATION == "DebugSLB" || $CONFIGURATION == "ReleaseSLB" || $CONFIGURATION == "DebugTuTu" || $CONFIGURATION == "ReleaseTutu" ]]; then
-		echo "SKIPPING PKG BUILD B/C WE ARE IN SLB MODE"
+	echo "PROJECT_NAME: ${PROJECT_NAME} TARGET_NAME: ${TARGET_NAME} CONFIGURATION: ${CONFIGURATION}"
+
+	if [[ $PROJECT_NAME == "uasharedtools" && $TARGET_NAME != "uasharedtoolsstub" ]]; then
+		echo "SKIPPING PACKAGE BUILD FOR UA_TOOLS BECAUSE WE ARE NOT IN THE CORRECT TARGET"
 	else
 		echo "Preparing to build package..."
 		
