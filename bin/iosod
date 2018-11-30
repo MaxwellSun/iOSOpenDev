@@ -25,7 +25,7 @@ export setCmd="set -eo pipefail"
 $setCmd
 
 # path #
-export PATH=/opt/iOSOpenDev/bin:/opt/theos/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
+export PATH=$THEOS_PATH:/opt/iOSOpenDev/bin:/opt/theos/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
 
 # script #
 
