@@ -1635,6 +1635,9 @@ function xcodeBuildPhase_Logos_Internal() # no args
 			panic 1 "Logos Processor outputted: $logosStdErr"
 	done
 
+	echo "Generated files list ..."
+	ls "$PROJECT_DIR/$PROJECT/"*.mm
+
 	echo "Note: If any *.xm or *.x file generated above by the Logos Processor (${projectXmFiles[@]}) is not being compiled below, then you must add it to the Xcode project to be compiled."
 
 	# success #
@@ -1741,8 +1744,8 @@ function xcodeBuildPhase_Logos() # no args
 	projectXmFiles=($(perl -ne 'if ($_ =~ /\/\* (.+\.xm) \*\/ *= *{.*?isa *= *PBXFileReference\b/) { print "$1\n"; }' "$pbxProjectFilePath"))
 	projectXFiles=($(perl -ne 'if ($_ =~ /\/\* (.+\.x) \*\/ *= *{.*?isa *= *PBXFileReference\b/) { print "$1\n"; }' "$pbxProjectFilePath"))
 	
-	if [ ! -d "$PROJECT_DIR/$TARGET_NAME" ]; then
-		echo "PROJECT FOLDER DOES NOT EXIST: $PROJECT_DIR/$TARGET_NAME"
+	if [ ! -d "$PROJECT_DIR/$PROJECT" ]; then
+		echo "PROJECT FOLDER DOES NOT EXIST: $PROJECT_DIR/$PROJECT"
 	fi
 
 	for f in "${projectXmFiles[@]}"; do
@@ -1769,6 +1772,9 @@ function xcodeBuildPhase_Logos() # no args
 		[[ $logosStdErr == "" ]] || \
 			panic 1 "Logos Processor outputted: $logosStdErr"
 	done
+
+	echo "Generated files list ..."
+	ls "$PROJECT_DIR/$PROJECT/"*.mm
 
 	echo "Note: If any *.xm or *.x file generated above by the Logos Processor (${projectXmFiles[@]}) is not being compiled below, then you must add it to the Xcode project to be compiled."
 
