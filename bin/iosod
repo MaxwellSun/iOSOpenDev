@@ -1613,7 +1613,7 @@ function xcodeBuildPhase_Logos_Internal() # no args
 	for f in "${projectXmFiles[@]}"; do
 		echo "Logos Processor: --config generator=internal $f -> ${f%.*}.mm..."
 
-		logosStdErr=$(("$logosProcessor" --config generator=internal "$PROJECT_DIR/$PROJECT/$f" > "$PROJECT_DIR/$PROJECT/${f%.*}.mm") 2>&1) || \
+		logosStdErr=$(("$logosProcessor" --config generator=internal "$PROJECT_DIR/$TARGET_NAME/$f" > "$PROJECT_DIR/$TARGET_NAME/${f%.*}.mm") 2>&1) || \
 			logosErr=$?
 		
 		if [[ $logosErr != 0 ]]; then
@@ -1628,7 +1628,7 @@ function xcodeBuildPhase_Logos_Internal() # no args
 	for f in "${projectXFiles[@]}"; do
 		echo "Logos Processor: --config generator=internal $f -> ${f%.*}.m..."
 
-		logosStdErr=$(("$logosProcessor" --config generator=internal "$PROJECT_DIR/$PROJECT/$f" > "$PROJECT_DIR/$PROJECT/${f%.*}.m") 2>&1) || \
+		logosStdErr=$(("$logosProcessor" --config generator=internal "$PROJECT_DIR/$TARGET_NAME/$f" > "$PROJECT_DIR/$TARGET_NAME/${f%.*}.m") 2>&1) || \
 			panic $? "Failed Logos Processor"
 	
 		[[ $logosStdErr == "" ]] || \
@@ -1751,7 +1751,7 @@ function xcodeBuildPhase_Logos() # no args
 	for f in "${projectXmFiles[@]}"; do
 		echo "Logos Processor: $f -> ${f%.*}.mm..."
 
-		logosStdErr=$(("$logosProcessor" "$PROJECT_DIR/$PROJECT/$f" > "$PROJECT_DIR/$PROJECT/${f%.*}.mm") 2>&1) || \
+		logosStdErr=$(("$logosProcessor" "$PROJECT_DIR/$TARGET_NAME/$f" > "$PROJECT_DIR/$TARGET_NAME/${f%.*}.mm") 2>&1) || \
 			logosErr=$?
 		
 		if [[ $logosErr != 0 ]]; then
@@ -1766,7 +1766,7 @@ function xcodeBuildPhase_Logos() # no args
 	for f in "${projectXFiles[@]}"; do
 		echo "Logos Processor: $f -> ${f%.*}.m..."
 
-		logosStdErr=$(("$logosProcessor" "$PROJECT_DIR/$PROJECT/$f" > "$PROJECT_DIR/$PROJECT/${f%.*}.m") 2>&1) || \
+		logosStdErr=$(("$logosProcessor" "$PROJECT_DIR/$TARGET_NAME/$f" > "$PROJECT_DIR/$TARGET_NAME/${f%.*}.m") 2>&1) || \
 			panic $? "Failed Logos Processor"
 	
 		[[ $logosStdErr == "" ]] || \
