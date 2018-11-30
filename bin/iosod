@@ -1606,6 +1606,10 @@ function xcodeBuildPhase_Logos_Internal() # no args
 	projectXmFiles=($(perl -ne 'if ($_ =~ /\/\* (.+\.xm) \*\/ *= *{.*?isa *= *PBXFileReference\b/) { print "$1\n"; }' "$pbxProjectFilePath"))
 	projectXFiles=($(perl -ne 'if ($_ =~ /\/\* (.+\.x) \*\/ *= *{.*?isa *= *PBXFileReference\b/) { print "$1\n"; }' "$pbxProjectFilePath"))
 	
+	if [ ! -d "$PROJECT_DIR/$TARGET_NAME" ]; then
+		echo "PROJECT FOLDER DOES NOT EXIST: $PROJECT_DIR/$TARGET_NAME"
+	fi
+
 	for f in "${projectXmFiles[@]}"; do
 		echo "Logos Processor: --config generator=internal $f -> ${f%.*}.mm..."
 
